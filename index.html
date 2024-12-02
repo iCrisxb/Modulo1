@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 1 - Desarrollo de Software</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Raleway:wght@300;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="modulo1.css">
+  <style>
+    #bienvenida {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+      background-color: #ffffff7e;
+      box-shadow: 0 4px 6px rgb(0, 0, 0);
+      padding: 20px; 
+    }
+  
+    #bienvenida h2 {
+      font-size: 3em;
+      color: #000000;
+      margin: 0;
+      animation: animacionBienvenida 1s ease-in-out infinite;
+    }
+  
+    @keyframes animacionBienvenida {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      25% {
+        transform: translateY(-5px);
+      }
+      50% {
+        transform: translateY(5px);
+      }
+      75% {
+        transform: translateY(-3px);
+      }
+    }
+  
+    #bienvenida p {
+      font-size: 1.9em;
+      color: #000000;
+      margin: 20px 0;
+    }
+  
+    #bienvenida .gif {
+      width: 40%;
+      max-width: 300px;
+      margin-top: 20px;
+    }
+  
+    section {
+      margin: 20px;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.432);
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+  
+    section h2 {
+      color: #000000;
+    }
+  
+    #mostrar-cards {
+      padding: 15px 30px;
+      background: linear-gradient(to right, #003152, #640043);
+      color: white;
+      font-size: 1.2em;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin: 20px 0;
+      width: 100%;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+  
+    #mostrar-cards:hover {
+      transform: scale(1);
+      background: linear-gradient(to right, #640043, #003152);
+      box-shadow: 0 0 5px 2px #003152, 0 0 5px 2px #640043;
+    }
+  
+    .submodulos {
+      display: none;
+    }
+  
+    @media (max-width: 768px) {
+      #bienvenida h2 {
+        font-size: 2.5em; 
+      }
+  
+      #bienvenida p {
+        font-size: 1.5em; 
+      }
+  
+      #bienvenida .gif {
+        width: 70%; 
+      }
+  
+      #mostrar-cards {
+        font-size: 1em; 
+        padding: 10px 20px;
+      }
+  
+      section {
+        margin: 10px;
+        padding: 15px; 
+      }
+    }
+  
+    @media (max-width: 480px) {
+      #bienvenida h2 {
+        font-size: 2em; 
+      }
+  
+      #bienvenida p {
+        font-size: 1.2em; 
+      }
+  
+      #mostrar-cards {
+        font-size: 0.9em;
+        padding: 8px 16px; 
+      }
+    }
+  </style>  
+</head>
+<body>
+  <header class="header">
+    <h1 class="titulo">Desarrolla Software de Sistemas Informáticos</h1>
+    <p class="subtitulo">¿Listos para aprender sobre este módulo? 🎉</p>
+  </header>
+
+  <main>
+    <!-- Sección de Bienvenida -->
+    <section id="bienvenida">
+      <h2>¡Bienvenidos al Módulo 1!</h2>
+      <p>En este Módulo, aprenderás a diseñar, codificar e implementar software de sistemas informáticos.</p>
+      <img src="aprender.webp" alt="GIF de programación" class="gif">
+      <button id="mostrar-cards">Comenzar</button>
+    </section>
+
+    <!-- Sección de Submódulos -->
+    <section class="submodulos">
+      <div class="cards-container">
+        <div class="card" onclick="location.href='submodulo1.html'">
+          <img src="diseña.jpg" alt="Diseño" class="card-img">
+          <div class="card-content">
+            <h3>Submódulo 1</h3>
+            <p>Diseña Software de Sistemas Informáticos</p>
+          </div>
+        </div>
+        <div class="card" onclick="location.href='submodulo2.html'">
+          <img src="codifica.jpg" alt="Codificación" class="card-img">
+          <div class="card-content">
+            <h3>Submódulo 2</h3>
+            <p>Codifica Software de Sistemas Informáticos</p>
+          </div>
+        </div>
+        <div class="card" onclick="location.href='submodulo3.html'">
+          <img src="implementa.jpg" alt="Implementación" class="card-img">
+          <div class="card-content">
+            <h3>Submódulo 3</h3>
+            <p>Implementa Software de Sistemas Informáticos</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Pie de Pagina -->
+  <footer>
+    <p>© 2024 Diseña software de sistemas informáticos | Todos los derechos reservados</p>
+  </footer>
+
+  <script>
+    // Muestra las tarjetas al hacer clic en el botón
+    document.getElementById('mostrar-cards').addEventListener('click', function() {
+      document.querySelector('.submodulos').style.display = 'block';
+      document.getElementById('bienvenida').style.display = 'none'; 
+    });
+  </script>
+</body>
+</html>

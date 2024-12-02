@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sopa de Letras</title>
+    <link rel="stylesheet" type="text/css" href="style.css" media="all">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="jquery-ui.css">
+    <link href="jquery.tagit.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="wordfind.js"></script>
+    <script type="text/javascript" src="wordfindgame.js"></script>
+    <script type="text/javascript" src="bootstrap.min.js"></script>
+    <script type="text/javascript" src="jquery-ui.min.js"></script>
+    <script type="text/javascript" src="tag-it.js"></script>
+    <style>
+        body {
+            background: linear-gradient(to right, #003152, #640043);
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        header {
+            padding: 1.5rem;
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            text-align: center;
+            width: 100%;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            color: #fff;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgb(255, 255, 255);
+        }
+
+        .panel {
+            background: #ffffff;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            padding: 20px;
+        }
+
+        .panel-heading {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            font-size: 2em;
+            font-weight: bold;
+            color: #000000;
+        }
+
+        .panel-body {
+            padding: 10px;
+            text-align: center;
+        }
+
+        button {
+            font-size: 1.2rem;
+            background-color: #967eff;
+            color: rgb(0, 0, 0);
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #403dff;
+        }
+
+        #juego {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        #Palabras {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        #Palabras li {
+            background-color: #003152;
+            color: #fff;
+            margin: 5px;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 1.2rem;
+        }
+
+        #solve {
+            background-color: #af7eff;
+        }
+
+        #solve:hover {
+            background-color: #983dff;
+        }
+
+        p {
+            text-align: right;
+            font-size: 2rem;
+            color: #000000;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+    .container {
+        width: 95%;
+        padding: 1rem;
+    }
+    .panel-body {
+        font-size: 1rem;
+    }
+    button {
+        padding: 8px 16px;
+        font-size: 1rem;
+    }
+    #juego {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+    .panel-body {
+        font-size: 0.9rem;
+    }
+    #juego {
+        flex-direction: column;
+        align-items: center;
+    }
+    #Palabras {
+        font-size: 1rem;
+    }
+}
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>SOPA DE LETRAS</h1>
+    </header>
+
+    <!-- Menú flotante para navegación -->
+    <nav id="menu-navegacion">
+    <h2 id="menu-nav-toggle">Navegación</h2>
+    <ul>
+      <li><a href="index.html">Página Principal</a></li>
+      <li><a href="submodulo1.html">Submodulo 1</a></li>
+      <li><a href="submodulo2.html">Submodulo 2</a></li>
+      <li><a href="submodulo3.html">Submodulo 3</a></li>
+    </ul>
+  </nav>
+
+    <div class="container">
+        <div class="panel">
+            <div class="panel-heading">Escribe las palabras y luego presiona el botón "Crear Juego"</div>
+            <div class="panel-body">
+                <ul id="listaPalabras">
+                    <li>Software</li>
+                    <li>Sistemas</li>
+                    <li>Diseño</li>
+                    <li>Implementación</li>
+                    <li>Código</li>
+                    <li>Programación</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="panel">
+            <div class="panel-heading">Sopa de letras</div>
+            <div class="panel-body">
+                <button onclick="Crear();" class="btn btn-lg">Crear Juego</button>
+                <button id="solve" class="btn btn-lg">Resolver</button>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div id="Palabras"></div>
+                    </div>
+                    <div class="col-md-9">
+                        <div id="juego"></div>
+                        <p>Busca las palabras a la derecha de la sopa de letras. Mantén presionado el ratón sobre las letras para seleccionar una palabra. Si la palabra es correcta, se marcará en azul y desaparecerá de la lista.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var ListaPalabras;
+        $(document).ready(function() {
+            ListaPalabras = $("#listaPalabras").tagit({});
+            Crear();
+        });
+
+        var palabras = [];
+        var juego;
+
+        function Crear() {
+            // Tomar las palabras de la lista e introducurlas en un array
+            datos = ListaPalabras[0].textContent.trim().split("×");
+            for (i = 0; i < (datos.length) - 1; i++) {
+                palabras.push(datos[i]);
+            }
+
+            $('#Juegos').show();
+            juego = wordfindgame.create(datos, '#juego', '#Palabras');
+            var puzzle = wordfind.newPuzzle(datos, {
+                height: 18,
+                width: 18,
+                fillBlanks: false
+            });
+        }
+
+        $('#solve').click(function() {
+            wordfindgame.solve(juego, palabras);
+        });
+
+        
+// Obtener elementos del menú de navegación
+const menuNav = document.getElementById("menu-navegacion");
+const menuNavToggle = document.getElementById("menu-nav-toggle");
+const menuNavList = document.querySelector("#menu-navegacion ul");
+
+// Alternar visibilidad de la lista cuando se haga clic en el título
+menuNavToggle.addEventListener("click", () => {
+  menuNavList.style.display = menuNavList.style.display === "block" ? "none" : "block";
+});
+
+// Hacer que el menú de navegación sea arrastrable
+let isDraggingNav = false;
+let offsetXNav = 0;
+let offsetYNav = 0;
+
+// Iniciar el arrastre (para mouse)
+menuNav.addEventListener("mousedown", (e) => {
+  isDraggingNav = true;
+  offsetXNav = e.clientX - menuNav.offsetLeft;
+  offsetYNav = e.clientY - menuNav.offsetTop;
+  menuNav.style.cursor = "grabbing";
+});
+
+// Iniciar el arrastre (para pantallas táctiles)
+menuNav.addEventListener("touchstart", (e) => {
+  isDraggingNav = true;
+  const touch = e.touches[0];
+  offsetXNav = touch.clientX - menuNav.offsetLeft;
+  offsetYNav = touch.clientY - menuNav.offsetTop;
+});
+
+// Mover el menú (para mouse)
+document.addEventListener("mousemove", (e) => {
+  if (isDraggingNav) {
+    menuNav.style.left = `${e.clientX - offsetXNav}px`;
+    menuNav.style.top = `${e.clientY - offsetYNav}px`;
+  }
+});
+
+// Mover el menú (para pantallas táctiles)
+document.addEventListener("touchmove", (e) => {
+  if (isDraggingNav) {
+    const touch = e.touches[0];
+    menuNav.style.left = `${touch.clientX - offsetXNav}px`;
+    menuNav.style.top = `${touch.clientY - offsetYNav}px`;
+  }
+});
+
+// Finalizar el arrastre (para mouse)
+document.addEventListener("mouseup", () => {
+  isDraggingNav = false;
+  menuNav.style.cursor = "move";
+});
+
+// Finalizar el arrastre (para pantallas táctiles)
+document.addEventListener("touchend", () => {
+  isDraggingNav = false;
+});
+
+
+    </script>
+</body>
+
+</html>

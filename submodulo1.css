@@ -1,0 +1,998 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #003152, #640043);
+    color: #000000;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+    padding: 1.5rem;
+    background: rgba(0, 0, 0, 0.6); 
+    color: white;
+    text-align: center;
+  }
+  
+  header h1 {
+    font-size: 2.5em;
+    color: #ffffff;
+    opacity: 0; 
+    transform: translateY(20px); 
+    animation: animacionHeader 2s ease-out forwards; 
+  }
+
+@keyframes animacionHeader {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+ 
+  section {
+    margin: 20px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.432);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  section h2 {
+    color: #000000;
+  }
+  
+/* Estilos para la sección de ¿Qué es el diseño de software? */
+#que-es {
+    padding: 40px;
+    background-color: #ffffff7e; 
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgb(0, 0, 0);
+    text-align: center;
+  }
+  
+  #que-es h2 {
+    font-size: 3em;
+    color: #000000;
+    margin-bottom: 20px;
+  }
+
+  /* Animación de cambio de color para el h2 */
+.animated-color {
+    font-size: 2.5em;
+    font-weight: bold;
+    text-align: center;
+    animation: animacionCambioColor 3s infinite;
+  }
+  
+  @keyframes animacionCambioColor {
+    0% {
+        color: #000000; 
+    }
+    50% {
+        color: #640043; 
+    }
+    100% {
+        color: #003152; 
+    }
+}
+  
+  #que-es p {
+    font-size: 1.5em;
+    color: #000000;
+    line-height: 1.6;
+    margin: 10px 0;
+  }
+  
+  #que-es h3 {
+    font-size: 2.5em;
+    color: #000000;
+    margin-top: 30px;
+  }
+
+  .smooth-animation {
+    font-size: 2em;
+    color: #003152;
+    text-align: center;
+    animation: CambioColor 3s infinite;
+  }
+  
+  @keyframes CambioColor {
+    0% {
+        color: #003152; 
+    }
+    50% {
+        color: #640043; 
+    }
+    100% {
+        color: #000000; 
+    }
+}
+  
+  .ejemplos button {
+    padding: 15px 30px;
+    background: linear-gradient(to right, #003152, #640043);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    color: white;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 10px;
+  }
+
+  .ejemplos button:hover {
+    transform: scale(1.1); 
+    background: linear-gradient(to right, #640043, #003152);
+    box-shadow: 0 0 5px 2px #003152, 0 0 5px 2px #640043; 
+  }
+  
+  #ejemplo-visual {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #ffffff65;
+    border-radius: 10px;
+    box-shadow: 0 0 15px 3px #003152, 0 0 15px 3px #640043; 
+    color: #ffffff;
+    display: flex; 
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  #ejemplo-visual h4 {
+    font-size: 2em;
+    color: #000000;
+    margin-bottom: 15px;
+  }
+
+  #ejemplo-visual p {
+    text-align: left; 
+    max-width: 90%; 
+    margin-left: 20px; 
+  }
+  
+    #ejemplo-visual img {
+    max-width: 500px; 
+    height: auto;
+    border-radius: 8px; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    margin-right: 20px; 
+  }
+  
+    #ejemplo-visual img:hover {
+    transform: scale(1.1); 
+    box-shadow: 0 0 10px 2px #003152, 0 0 10px 2px #640043; 
+  }
+  
+  @media (max-width: 768px) {
+    #que-es {
+      padding: 20px;
+    }
+  
+    #que-es h2 {
+      font-size: 2em;
+    }
+  
+    #que-es p, #ejemplo-visual p {
+      font-size: 1.2em;
+    }
+  
+    .ejemplos button {
+      font-size: 1em;
+      padding: 10px 20px;
+    }
+  }
+  
+  footer {
+    padding: 1.5rem;
+    background: rgba(0, 0, 0, 0.6); 
+    color: white;
+    text-align: center;
+  }
+
+/* Sección de pasos para diseñar software */
+#pasos {
+    padding: 40px;
+    background-color: #ffffff7e; 
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgb(0, 0, 0);
+    text-align: center;
+}
+
+#pasos h2 {
+    font-size: 3em;
+    color: #000000;
+    margin-bottom: 20px;
+    font-family: 'Poppins', sans-serif;
+    animation: animacion 4s infinite;
+}
+
+@keyframes animacion {
+    0% {
+        color: #000000; 
+    }
+    50% {
+        color: #640043; 
+    }
+    100% {
+        color: #003152; 
+    }
+}
+
+.pasos-container {
+    display: flex;
+    justify-content: space-between; 
+    gap: 20px; 
+}
+
+.paso {
+    background-color: #ffffff65;
+    border-radius: 10px;
+    box-shadow: 0 0 6px 2px #00558d, 0 0 5px 2px #9e0069; 
+    padding: 20px;
+    width: 22%; 
+    text-align: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+}
+
+.paso h3 {
+    font-size: 1.8rem;
+    color: #000000;
+    margin-bottom: 10px;
+}
+
+.paso p {
+    font-size: 1.5rem;
+    color: #000000;
+    margin-bottom: 15px;
+}
+
+.paso img {
+    width: 100%;
+    max-width: 120px;
+    height: auto;
+    border-radius: 8px;
+}
+
+.paso:hover {
+    transform: scale(1.05); 
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.301); 
+}
+
+.minijuego {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.minijuego h2 {
+    font-size: 1.8rem;
+    color: #000000;
+    margin-bottom: 20px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.bloques {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.bloque {
+    background-color: #f5f5f5c7;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 2.9rem;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bloque:hover {
+    transform: scale(1.1); /* Efecto al pasar el mouse */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+#jugar-btn {
+  background: linear-gradient(to right, #003152, #640043);
+  color: white;
+  padding: 20px 400px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 2.9rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-top: 20px;
+}
+
+#jugar-btn:hover {
+  transform: scale(1.05);
+  background: linear-gradient(to right, #640043, #003152);
+  box-shadow: 0 0 5px 2px #003152, 0 0 5px 2px #640043;
+}
+
+#verificar {
+    background: linear-gradient(to right, #003152, #640043);
+    color: white;
+    padding: 20px 400px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 2.9rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    margin-top: 20px;
+}
+
+#verificar:hover {
+    transform: scale(1.1); 
+    background: linear-gradient(to right, #640043, #003152);
+    box-shadow: 0 0 5px 2px #003152, 0 0 5px 2px #640043; 
+}
+
+#mensaje {
+    margin-top: 20px;
+    font-size: 2.9rem;
+    color: #000000;
+}
+
+.oculto {
+    display: none;
+}
+
+#ejemplo-pizzeria {
+    padding: 40px;
+    background-color: #ffffff7e; 
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgb(0, 0, 0);
+    text-align: center;
+}
+
+#ejemplo-pizzeria h2 {
+    font-size: 2.5em;
+    color: #000000;
+    margin-bottom: 20px;
+    animation: Colorcambio 4s infinite;
+}
+
+@keyframes Colorcambio {
+    0% {
+        color: #000000; 
+    }
+    50% {
+        color: #640043; 
+    }
+    100% {
+        color: #003152; 
+    }
+}
+
+.etapa {
+    padding: 20px;
+    background-color: #ffffff8f;
+    border-radius: 10px;
+    box-shadow: 0 0 6px 2px #00558d, 0 0 5px 2px #9e0069; 
+    margin-bottom: 30px;
+    transition: transform 0.3s ease;
+}
+
+.etapa h3 {
+    font-size: 2.5em;
+    color: #000000;
+    margin-bottom: 15px;
+}
+
+.etapa p {
+    font-size: 2.2em;
+    color: #000000;
+    line-height: 1.6;
+    margin: 10px 0;
+}
+
+/* Estilo de la lista */
+.lista-analisis {
+  list-style: none; 
+  padding: 0;
+  margin: 0;
+}
+
+.lista-analisis li {
+  display: flex;
+  align-items: center;
+  font-size: 1.9rem;
+  color: #000000;
+  margin-bottom: 12px;
+  padding-left: 45px; 
+  position: relative;
+}
+
+.lista-analisis li .icono {
+  position: absolute;
+  left: 10px;
+  width: 20px;
+  height: 20px;
+  background-color: #640043;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.etapa button {
+    padding: 15px 30px;
+    background: linear-gradient(to right, #003152, #640043);
+    color: white;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.etapa button:hover {
+    transform: scale(1.1); 
+    background: linear-gradient(to right, #640043, #003152);
+    box-shadow: 0 0 5px 2px #003152, 0 0 5px 2px #640043; 
+}
+
+#ejemplo-pizzeria img {
+    max-width: 35%;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#ejemplo-pizzeria img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px 3px rgba(0, 49, 82, 0.5), 0 0 10px 3px rgba(100, 0, 67, 0.5);
+}
+
+.bloque-codigo {
+  position: relative;
+  background-color: #ffffff69;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  margin-top: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.555);
+}
+
+.encabezado-codigo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.encabezado-codigo span {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #000000;
+}
+
+.boton-copiar {
+  padding: 8px 16px;
+  background-color: #640043;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.boton-copiar:hover {
+  background-color: #003152;
+}
+
+pre {
+  background-color: #000000c0;
+  color: white;
+  padding: 15px;
+  border-radius: 5px;
+  font-size: 1rem;
+  overflow-x: auto;
+}
+
+.explicacion-codigo {
+  margin-top: 15px;
+  background-color: #f9f9f969;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.explicacion-codigo h4 {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.explicacion-codigo p {
+  font-size: 1.9rem;
+}
+
+.animar-boton {
+  animation: pulso 1s infinite;
+}
+
+@keyframes pulso {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+#form-pizza {
+    margin-top: 20px;
+    font-size: 1.5em;
+    color: #000000;
+    background-color: #f9f9f963;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgb(0, 0, 0);
+}
+
+#form-pizza label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #000000;
+}
+
+#form-pizza select, #form-pizza input[type="checkbox"] {
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 1em;
+    border-radius: 5px;
+    border: 1px solid #000000;
+    width: 100%;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#form-pizza select:focus, #form-pizza input[type="checkbox"]:focus {
+    border-color: #000a64;
+    box-shadow: 0 0 8px rgba(100, 0, 67, 0.5);
+}
+
+#form-pizza input[type="checkbox"] {
+    width: auto;
+    margin-right: 10px;
+    vertical-align: middle;
+    transform: scale(1.2);
+}
+
+#form-pizza input[type="checkbox"]:checked {
+    background-color: #640043;
+    border-color: #640043;
+}
+
+#form-pizza select {
+    display: inline-block;
+    width: auto;
+    max-width: 100%;
+}
+
+#form-pizza button {
+    margin-top: 20px;
+    padding: 15px 30px;
+    background: linear-gradient(to right, #003152, #640043);
+    color: white;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    width: 100%;
+}
+
+#form-pizza button:hover {
+    transform: scale(1); 
+    background: linear-gradient(to right, #640043, #003152);
+    box-shadow: 0 0 5px 2px #003152, 0 0 5px 2px #640043; 
+}
+
+#form-pizza fieldset {
+    border: 2px solid #000000;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f3f3f383;
+    margin-bottom: 20px;
+}
+
+#form-pizza fieldset legend {
+    font-size: 1.3em;
+    color: #000000;
+    font-weight: bold;
+}
+
+#resumen-pedido {
+    margin-top: 20px;
+    font-size: 1.5em;
+    color: #003152;
+    background-color: #ffffff7a;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgb(0, 0, 0);
+}
+
+#resumen-pedido h4 {
+    font-size: 2em;
+    color: #640043;
+    margin-bottom: 15px;
+}
+
+#resumen-pedido p {
+    font-size: 1.2em;
+    color: #000000;
+}
+
+@media (max-width: 768px) {
+    #ejemplo-pizzeria {
+        padding: 20px;
+    }
+
+    #form-pizza {
+        font-size: 1.1em;
+    }
+
+    #form-pizza button {
+        font-size: 1.1em;
+        padding: 12px 24px;
+    }
+
+    #resumen-pedido {
+        font-size: 1.2em;
+    }
+}
+
+/* Sección: ¿Qué es un diagrama de flujo? */
+.flowchart-explanation {
+  padding: 40px;
+  background-color: #ffffff7e; 
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgb(0, 0, 0);
+  text-align: center;
+}
+.flowchart-explanation h2 {
+  font-size: 50px;
+  color: #000000;
+  margin-bottom: 15px;
+  animation: animacion 4s infinite;
+}
+
+.flowchart-explanation p {
+  font-size: 30px;
+  line-height: 1.8;
+  color: #000000;
+  text-align: justify;
+  margin: 0;
+  flex: 1; 
+}
+
+.content-container {
+  display: flex;
+  justify-content: space-between; 
+  align-items: flex-start;
+  gap: 20px; 
+}
+
+.image-container {
+  cursor: pointer;
+  max-width: 45%; 
+}
+
+.flowchart-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.flowchart-image:hover {
+  transform: scale(1.05); 
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  max-width: 90%;
+  max-height: 90%;
+  margin: auto;
+  border-radius: 10px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.simbolos-seccion {
+    padding: 40px;
+    background-color: #ffffff7e; 
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgb(0, 0, 0);
+    text-align: center;
+  }
+  
+  .simbolos-seccion h2 {
+    font-size: 50px;
+    color: #000000;
+    margin-bottom: 20px;
+    animation: animacion 4s infinite;
+  }
+
+  .simbolos-cuadro {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  justify-items: center;
+  }
+
+  .simbolo {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.507);
+  transition: transform 0.3s ease;
+  }
+  
+  .simbolo:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 12px rgb(0, 0, 0);
+  }
+  
+  .simbolo img {
+  width: 100px;
+  height: 55px;
+  margin-bottom: 10px;
+  }
+
+  .simbolo-texto h3 {
+    font-size: 1.2rem;
+    color: #640043;
+    font-weight: bold;
+    margin: 5px 0;
+  }
+  
+  .simbolo-texto p {
+    font-size: 20px;
+    color: #000000;
+    line-height: 1.5;
+    padding: 0 10px;
+    margin: 0;
+  }
+
+/* Menú flotante */
+#menu-flotante {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background-color: #ffffff52;
+  border-radius: 5px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.432);
+  padding: 10px;
+  z-index: 100;
+  transition: all 0.3s ease;
+  cursor: move; 
+  max-width: 200px;
+}
+
+#menu-flotante h2 {
+  font-size: 15px;
+  margin: 0;
+  cursor: pointer;
+  padding: 5px;
+  background: linear-gradient(to right, #003152, #640043);
+  color: #ffffff;
+  border-radius: 5px;
+  text-align: center;
+  transition: background-color 0.3s;
+}
+
+#menu-flotante h2:hover {
+  transform: scale(1);
+  background: linear-gradient(to right, #640043, #003152);
+  box-shadow: 0 0 5px 2px #003152, 0 0 5px 2px #640043;
+}
+
+#menu-flotante ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+  display: none;
+}
+
+#menu-flotante li {
+  padding: 8px;
+  transition: background-color 0.3s;
+}
+
+#menu-flotante li a {
+  text-decoration: none;
+  color: #000000;
+  display: block;
+}
+
+#menu-flotante li:hover {
+  background-color: #ddddddad;
+}
+
+#menu-flotante li a:hover {
+  color: #280668;
+}
+
+/* Menú flotante para navegación */
+#menu-navegacion {
+  position: fixed;
+  top: 50px;
+  right: 20px;
+  background-color: #ffffff52;
+  border-radius: 5px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.432);
+  padding: 10px;
+  z-index: 200;
+  transition: all 0.3s ease;
+  cursor: move; 
+  max-width: 200px;
+}
+
+#menu-navegacion h2 {
+  font-size: 15px;
+  margin: 0;
+  cursor: pointer;
+  padding: 5px;
+  background: linear-gradient(to right, #002966, #800080);
+  color: #ffffff;
+  border-radius: 5px;
+  text-align: center;
+  transition: background-color 0.3s;
+}
+
+#menu-navegacion h2:hover {
+  transform: scale(1.05);
+  background: linear-gradient(to right, #800080, #002966);
+  box-shadow: 0 0 5px 2px #002966, 0 0 5px 2px #800080;
+}
+
+#menu-navegacion ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+  display: none; 
+}
+
+#menu-navegacion li {
+  padding: 8px;
+  transition: background-color 0.3s;
+}
+
+#menu-navegacion li a {
+  text-decoration: none;
+  color: #000000;
+  display: block;
+}
+
+#menu-navegacion li:hover {
+  background-color: #ddd6fc;
+}
+
+#menu-navegacion li a:hover {
+  color: #38056b;
+}
+
+
+/* Ajustes para pantallas pequeñas (teléfonos) */
+@media (max-width: 576px) {
+  header h1 {
+    font-size: 1.8em;
+  }
+
+  section {
+    margin: 10px;
+    padding: 10px;
+  }
+
+  #que-es h2, #pasos h2, #ejemplo-pizzeria h2 {
+    font-size: 1.8em;
+  }
+
+  #que-es p, #ejemplo-visual p, .paso p {
+    font-size: 1em;
+  }
+
+  .pasos-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .paso {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  #ejemplo-visual {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  #ejemplo-visual img {
+    margin-bottom: 20px;
+    max-width: 90%;
+  }
+
+  .ejemplos button {
+    font-size: 0.9em;
+    padding: 8px 15px;
+  }
+
+  #jugar-btn, #verificar {
+    font-size: 1.2rem;
+    padding: 10px 20px;
+  }
+
+  #mensaje {
+    font-size: 1.5rem;
+  }
+}
+
+/* Ajustes para pantallas medianas (tabletas) */
+@media (max-width: 992px) {
+  .pasos-container {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .paso {
+    width: 45%; /* Se ajusta para dos columnas */
+  }
+
+  #que-es h2, #pasos h2, #ejemplo-pizzeria h2 {
+    font-size: 2.2em;
+  }
+
+  #que-es p, #ejemplo-visual p, .paso p {
+    font-size: 1.2em;
+  }
+
+  .ejemplos button {
+    font-size: 1em;
+    padding: 10px 20px;
+  }
+
+  #jugar-btn, #verificar {
+    font-size: 1.5rem;
+    padding: 15px 30px;
+  }
+
+  #mensaje {
+    font-size: 2rem;
+  }
+}
